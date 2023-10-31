@@ -1,0 +1,8 @@
+UI/UX Inspiration:
+https://www.behance.net/search/projects?search=website&tracking_source=typeahead_nav_suggestion&sort=appreciations
+
+ToDo: 
+1. Decide on product category 
+2. Decide on simple design
+3. Plan out entire app (MVP only) 
+4. Start building 

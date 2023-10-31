@@ -18,3 +18,16 @@ in the development process.
 ===================================== Router ==================================
 Tutorial: https://reactrouter.com/en/main/start/tutorial
 Docs: https://reactrouter.com/en/main
+
+================================== Fetching Data ==============================
+Performance: https://www.developerway.com/posts/how-to-fetch-data-in-react
+
+Avoiding "waterfall of requests":
+The "waterfall of requests" refers to a situation in web development where 
+multiple HTTP requests are made sequentially or one after another, often 
+triggered by the completion of the previous request. This can be problematic for
+several reasons, one being negative impact on performance as latency adds up 
+for each request. 
+1. Batch requests an concurrency methods (like promise.All)
+2. Data cashing: Use client side libraries like Redux for example. 
+3. Pagination: For large datasets. 
