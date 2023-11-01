@@ -1,8 +1,16 @@
 UI/UX Inspiration:
-https://www.behance.net/search/projects?search=website&tracking_source=typeahead_nav_suggestion&sort=appreciations
+https://www.behance.net/
 
-ToDo: 
-1. Decide on product category 
-2. Decide on simple design
-3. Plan out entire app (MVP only) 
-4. Start building 
+Components: 
+* Navigation (home, exchange, cart)
+* Home (Landing page)
+* Exchange (grid of coins, with current price and change %, and icon)
+* Cart (list and checkout)
+
+Todo (MVP):
+* Build out static site with routing
+* Add API data 
+* Test crucial functionality only 
+
+Don't forget: 
+* https://www.coingecko.com/en/branding
