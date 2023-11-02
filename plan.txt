@@ -9,6 +9,7 @@ Components:
 
 Todo (MVP):
 * Build out static site with routing
+-navbar component 
 * Add API data 
 * Test crucial functionality only 
 
