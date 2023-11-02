@@ -9,7 +9,9 @@ Components:
 
 Todo (MVP):
 * Build out static site with routing
--navbar component 
+-navbar component
+--different pages HOME and EXCHANGE 
+--clicking cart display/hide the cart component to the right
 * Add API data 
 * Test crucial functionality only 
 

@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 export default function Navigation() {
   return (
     <nav>
       <div className='nav left'>
-        <a href='/'>HOME</a>
-        <a href='/'>EXCHANGE</a>
+        <Link to='/'>HOME</Link>
+        <Link to='exchange'>EXCHANGE</Link>
       </div>
       <div className='nav right'>
         <a href='/'>CART</a>
