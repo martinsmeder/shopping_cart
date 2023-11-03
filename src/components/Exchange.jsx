@@ -1,3 +1,12 @@
+import Footer from './Footer';
+import Navigation from './Navigation';
+
 export default function Exchange() {
-  return <main>EXCHANGE</main>;
+  return (
+    <>
+      <Navigation />
+      <main>EXCHANGE</main>
+      <Footer />
+    </>
+  );
 }

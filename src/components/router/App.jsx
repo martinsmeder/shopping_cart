@@ -1,47 +1,19 @@
-import { Link } from 'react-router-dom';
-
-import { useEffect, useState } from 'react';
-
-// const fetchData = () => {
-//   const [products, setProducts] = useState(null)
-
-//   useEffect(() => {
-//     fetch('https://fakestoreapi.com/products')
-//     .then((response) => response.json())
-//     .then((jsonData) => console.log(jsonData))
-//   })
-// }
+import NavBar from './NavBar';
 
 const App = () => {
-  // const { imageURL, error, loading } = fetchImage();
-
-  useEffect(() => {
-    fetch(
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en'
-    )
-      .then((response) => response.json())
-      .then((jsonData) => console.log(jsonData));
-  });
-
-  // if (error) return <p>A network error was encountered</p>;
-  // if (loading) return <p>Loading...</p>;
-
   return (
-    // imageURL && (
     <>
-      <h1>An image</h1>
-      {/* <img src={imageURL} alt={'placeholder text'} /> */}
-      <ul>
-        <li>
-          <Link to='profile'>Profile page</Link>
-        </li>
-      </ul>
+      <NavBar />
+      <div>
+        <h1>YOU ARE HOME</h1>
+      </div>
     </>
   );
-  // );
 };
 
 export default App;
+
+// import { useEffect, useState } from 'react';
 
 // const fetchImage = () => {
 //   const [imageURL, setImageURL] = useState(null);
@@ -61,3 +33,26 @@ export default App;
 
 //   return { imageURL, error, loading };
 // };
+
+// const fetchData = () => {
+//   const [products, setProducts] = useState(null)
+
+//   useEffect(() => {
+//     fetch('https://fakestoreapi.com/products')
+//     .then((response) => response.json())
+//     .then((jsonData) => console.log(jsonData))
+//   })
+// }
+
+// const { imageURL, error, loading } = fetchImage();
+
+// useEffect(() => {
+//   fetch(
+//     'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en'
+//   )
+//     .then((response) => response.json())
+//     .then((jsonData) => console.log(jsonData));
+// });
+
+// if (error) return <p>A network error was encountered</p>;
+// if (loading) return <p>Loading...</p>;

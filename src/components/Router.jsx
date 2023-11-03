@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
-import NotHome from './NotHome';
+import Exchange from './Exchange';
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -9,8 +9,9 @@ const Router = () => {
       element: <App />,
     },
     {
-      path: 'nothome/',
-      element: <NotHome />,
+      // Clicking on exchange twice throws an error?
+      path: 'exchange/',
+      element: <Exchange />,
     },
   ]);
 

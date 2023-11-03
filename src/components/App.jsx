@@ -1,6 +1,5 @@
 import Navigation from './Navigation';
 import Home from './Home';
-import Exchange from './Exchange';
 import Footer from './Footer';
 
 export default function App() {
@@ -8,7 +7,6 @@ export default function App() {
     <>
       <Navigation />
       <Home />
-      <Exchange />
       <Footer />
     </>
   );
