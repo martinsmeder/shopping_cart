@@ -1,36 +1,7 @@
-/* #exchangeContainer {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    text-align: left;
-}
-
 table {
-    font-size: 1.5rem;
-}
-
-th {
-    background: #f2f2f2;
-    padding: 5px;
-    color: #000;
-}
-
-td {
-    padding: 5px;
-}
-
-tr:nth-child(even) {
-    background: #f2f2f2;
-}
-
-
-
-/*  */
-
-table {
-    border-collapse: separate;
-    border-spacing: 0 10px; /* Adjust the vertical spacing as needed */
-    width: 100%;
+    width: 90%;
+    border-spacing: 0 10px;
+    font-size: 1.2rem;
 }
   
 th, td {
@@ -39,22 +10,51 @@ th, td {
 }
 
 td img {
-    width: 45px;
+    width: 40px;
     border-radius: 5px;
 } 
-  
-tr {   
+
+thead tr {
+    background: #000;
+    color: #FFF;
     box-shadow: 0 0 0.3rem #000;
-    border-radius: 5px;
+    font-size: 1.5rem;
 }
   
-tr:hover {
-    /* background: #f2f2f2;
-    border-radius: 5px; */
-    transform: scale(1.02);
+tbody tr {   
+    box-shadow: 0 0 0.1rem #000;
+    border-radius: 5px;
+    transition: all .2s ease-out;
+}
+  
+tbody tr:hover {
+    box-shadow: 0 0 0.5rem #000;
+
 }
 
 .name {
     display: flex;
     align-items: center;
+    gap: 5px;
 } 
+
+table button {
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background: #FFF;
+    color: #000;
+    transition: all .1s ease-out;
+}
+
+table button:hover {
+    color: #FFF;
+    background: #000;
+}
+
+table button:active {
+    transform: scale(1.1);
+}

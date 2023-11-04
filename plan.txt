@@ -15,10 +15,13 @@ Todo (MVP):
 ---
 ---
 Super simple exchange with api call (num, name, icon, price)
-* Fetch and parse data 
-* Set state with data
-* Render divs with data 
-* Add input box for adding to cart 
+--- 
+---
+---
+---
+---
+* Fix API-key so I don't get banned 
+* Add popup with input for adding to cart
 * Render cart
 * Create test for adding stuff to cart only 
 * Add missing crucial functionality (e.g., deleting from cart)

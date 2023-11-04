@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import getCoins from './api';
+import Table from './Table';
 
 export default function Exchange() {
   const [coinData, setCoinData] = useState(null);
@@ -24,27 +25,7 @@ export default function Exchange() {
     <>
       <Header />
       <main id='exchangeContainer'>
-        <table id='tableContainer'>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {coinData.map((item) => (
-              <tr>
-                <td className='rank'>{item.rank}</td>
-                <td className='name'>
-                  <img src={item.image} alt={item.name} />{' '}
-                  {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
-                </td>
-                <td className='price'>{item.price}$</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Table data={coinData} />
       </main>
       <Footer />
     </>
