@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Router from './components/Router';
 import './styles/root.css';
-import './styles/nav.css';
+import './styles/header.css';
 import './styles/footer.css';
 import './styles/home.css';
 

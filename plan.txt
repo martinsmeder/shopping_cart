@@ -12,12 +12,17 @@ Todo (MVP):
 ---
 ---
 ---
-Navigation
-Home
-Exchange with empty divs
-Cart without items
-* Add API data 
-* Test crucial functionality only 
+---
+---
+Super simple exchange with api call (num, name, icon, price)
+* Fetch and parse data 
+* Set state with data
+* Render divs with data 
+* Add input box for adding to cart 
+* Render cart
+* Create test for adding stuff to cart only 
+* Add missing crucial functionality (e.g., deleting from cart)
+* Finish MVP 
 
 Don't forget: 
 * https://www.coingecko.com/en/branding

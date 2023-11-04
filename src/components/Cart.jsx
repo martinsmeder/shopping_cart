@@ -1,10 +1,10 @@
 import Footer from './Footer';
-import Navigation from './Navigation';
+import Header from './Header';
 
 export default function Cart() {
   return (
     <>
-      <Navigation />
+      <Header />
       <main>CART</main>
       <Footer />
     </>

@@ -7,23 +7,16 @@ main {
   flex-grow: 1;
 }
 
-.home.top {
+.home {
     display: flex;
     align-items: center;
-}
-
-.home.top h1 {
-   padding-bottom: 30px;
 }
 
 .home.top img {
     transform: scale(.7);
 }
 
-.home.bottom {
-    display: flex;
-    align-items: center;
-}
+
 
 
 

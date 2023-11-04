@@ -3,7 +3,6 @@ export default function Home() {
     <main>
       <div className='home top'>
         <div className='text top'>
-          <h1>Welcome to SpaceLedger</h1>
           <h3>Your Premier Crypto Simulation Platform</h3>
           <p>
             SpaceLedger is your gateway to the exciting world of cryptocurrency
