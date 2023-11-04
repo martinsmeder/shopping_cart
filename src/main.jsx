@@ -4,6 +4,7 @@ import Router from './components/Router';
 import './styles/root.css';
 import './styles/nav.css';
 import './styles/footer.css';
+import './styles/home.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

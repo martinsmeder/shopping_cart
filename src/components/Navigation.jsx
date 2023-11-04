@@ -5,10 +5,10 @@ export default function Navigation() {
     <nav>
       <div className='nav left'>
         <Link to='/'>HOME</Link>
-        <Link to='exchange'>EXCHANGE</Link>
+        <Link to='/exchange'>EXCHANGE</Link>
       </div>
       <div className='nav right'>
-        <a href='/'>CART</a>
+        <Link to='/cart'>CART</Link>
       </div>
     </nav>
   );

@@ -1,3 +1,12 @@
+import Footer from './Footer';
+import Navigation from './Navigation';
+
 export default function Cart() {
-  return <main>CART</main>;
+  return (
+    <>
+      <Navigation />
+      <main>CART</main>
+      <Footer />
+    </>
+  );
 }

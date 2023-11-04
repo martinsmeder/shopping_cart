@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Exchange from './Exchange';
+import Cart from './Cart';
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -9,9 +10,12 @@ const Router = () => {
       element: <App />,
     },
     {
-      // Clicking on exchange twice throws an error?
-      path: 'exchange/',
+      path: 'exchange',
       element: <Exchange />,
+    },
+    {
+      path: 'cart',
+      element: <Cart />,
     },
   ]);
 
