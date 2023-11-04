@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main>
+    <main id='homeContainer'>
       <div className='home top'>
         <div className='text top'>
           <h3>Your Premier Crypto Simulation Platform</h3>
