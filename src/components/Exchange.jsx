@@ -5,7 +5,7 @@ import Header from './Header';
 import getCoins from './api';
 import Table from './Table';
 
-export default function Exchange() {
+export default function Exchange({ cartItems, handleClick }) {
   const [coinData, setCoinData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -25,7 +25,16 @@ export default function Exchange() {
     <>
       <Header />
       <main id='exchangeContainer'>
-        <Table data={coinData} />
+        <h1>REMOVE ME</h1>
+        <ul>
+          {cartItems.map((item) => (
+            <li key={item.id}>
+              {item.name} : {item.price}$
+            </li>
+          ))}
+        </ul>
+
+        <Table data={coinData} handleClick={handleClick} />
       </main>
       <Footer />
     </>

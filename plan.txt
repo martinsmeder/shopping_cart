@@ -8,21 +8,25 @@ Components:
 * Cart (list and checkout)
 
 Todo (MVP):
-* Build out static site with routing
 ---
 ---
 ---
 ---
 ---
-Super simple exchange with api call (num, name, icon, price)
+---
+---
 --- 
 ---
 ---
 ---
 ---
-* Fix API-key so I don't get banned 
-* Add popup with input for adding to cart
-* Render cart
+---
+Add to cart
+- ---
+- add correct coin to cartArray
+- add popup box with input, start with whole numbers 
+- get num < 1 to work 
+Render cart
 * Create test for adding stuff to cart only 
 * Add missing crucial functionality (e.g., deleting from cart)
 * Finish MVP 
