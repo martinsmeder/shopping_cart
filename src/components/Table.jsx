@@ -1,4 +1,4 @@
-export default function Table({ data, handleClick }) {
+export default function Table({ data, clickHandler }) {
   return (
     <table id='tableContainer'>
       <thead>
@@ -20,7 +20,7 @@ export default function Table({ data, handleClick }) {
             <td className='price'>{item.price}$</td>
             <td className='buy'>
               {' '}
-              <button onClick={handleClick}>Buy</button>{' '}
+              <button onClick={() => clickHandler(item)}>Buy</button>{' '}
             </td>
           </tr>
         ))}

@@ -5,18 +5,33 @@ import Cart from './Cart';
 import { useState } from 'react';
 
 const Router = () => {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: 'fakeCoin', price: 100 },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
-  function handleBuyClick() {
-    const newCartItems = [
-      { id: 2, name: 'bitcoin', price: 34000 },
-      { id: 3, name: 'ethereum', price: 1893 },
-    ];
-
-    setCartItems([...cartItems, ...newCartItems]);
+  function handleBuyClick(item) {
+    let cartData = {
+      id: item.rank,
+      name: item.name,
+      price: item.price,
+      amount: 1,
+    };
+    if (
+      cartItems.some(
+        (cartItem) =>
+          cartItem.id === cartData.id || cartItem.name === cartData.name
+      )
+    ) {
+      const itemCopy = { ...cartData, amount: cartData.amount + 1 };
+      const updatedArray = cartItems.map((item) =>
+        item.id === itemCopy.id ? itemCopy : item
+      );
+      setCartItems(updatedArray);
+    } else {
+      setCartItems([...cartItems, cartData]);
+    }
   }
+
+  // if same coin clicked twice, amount increases
+  // --> get amount directly from cartItems array in order to increment
 
   const router = createBrowserRouter([
     {
@@ -25,7 +40,7 @@ const Router = () => {
     },
     {
       path: 'exchange',
-      element: <Exchange cartItems={cartItems} handleClick={handleBuyClick} />,
+      element: <Exchange cartItems={cartItems} clickHandler={handleBuyClick} />,
     },
     {
       path: 'cart',
