@@ -11,7 +11,7 @@ export default function Table({ data, clickHandler }) {
       </thead>
       <tbody>
         {data.map((item) => (
-          <tr>
+          <tr key={item.rank}>
             <td className='rank'>{item.rank}</td>
             <td className='name'>
               <img src={item.image} alt={item.name} />{' '}

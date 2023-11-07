@@ -1,7 +1,7 @@
 import Footer from './Footer';
 import Header from './Header';
 
-export default function Cart({ cartItems }) {
+export default function Cart({ cartItems, sumTotal }) {
   return (
     <>
       <Header />
@@ -16,6 +16,7 @@ export default function Cart({ cartItems }) {
               </li>
             ))}
           </ul>
+          <h2>Total: {sumTotal.toFixed(2)}$</h2>
         </div>
       </main>
       <Footer />
