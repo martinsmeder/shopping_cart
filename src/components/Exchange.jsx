@@ -5,8 +5,14 @@ import Header from './Header';
 import getCoins from './api';
 import testArray from './testData';
 import Table from './Table';
+import Popup from './Popup';
 
-export default function Exchange({ cartItems, clickHandler }) {
+export default function Exchange({
+  cartItems,
+  clickHandler,
+  submitHandler,
+  showPopup,
+}) {
   const [coinData, setCoinData] = useState(testArray);
   // const [coinData, setCoinData] = useState(null);
   // const [error, setError] = useState(null);
@@ -35,6 +41,8 @@ export default function Exchange({ cartItems, clickHandler }) {
             </li>
           ))}
         </ul>
+
+        <Popup showPopup={showPopup} submitHandler={submitHandler} />
 
         <Table data={coinData} clickHandler={clickHandler} />
       </main>
