@@ -25,9 +25,9 @@ Todo (MVP):
 ---
 ---
 ---
-add popup box with input, start with whole numbers:
-on buy click, render popup with input field, priceTotal and "confirm" button
-input field change affect priceTotal
+---
+---
+input field change affect priceTotal with converted number
 submit adds correct coin, amount, and price to cartItems state 
 
 get num < 1 to work 

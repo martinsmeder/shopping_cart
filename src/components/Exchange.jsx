@@ -10,7 +10,9 @@ import Popup from './Popup';
 export default function Exchange({
   cartItems,
   clickHandler,
+  changeHandler,
   submitHandler,
+  priceTotal,
   showPopup,
 }) {
   const [coinData, setCoinData] = useState(testArray);
@@ -42,7 +44,12 @@ export default function Exchange({
           ))}
         </ul>
 
-        <Popup showPopup={showPopup} submitHandler={submitHandler} />
+        <Popup
+          showPopup={showPopup}
+          changeHandler={changeHandler}
+          submitHandler={submitHandler}
+          priceTotal={priceTotal}
+        />
 
         <Table data={coinData} clickHandler={clickHandler} />
       </main>

@@ -16,7 +16,7 @@ export default function Cart({ cartItems, sumTotal }) {
               </li>
             ))}
           </ul>
-          <h2>Total: {sumTotal.toFixed(2)}$</h2>
+          <h2>Total: {sumTotal}$</h2>
         </div>
       </main>
       <Footer />

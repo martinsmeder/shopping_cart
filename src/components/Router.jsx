@@ -6,7 +6,10 @@ import { useState } from 'react';
 import { incrementAmount, getSumTotal } from './utils';
 
 const Router = () => {
+  const [currentItem, setCurrentItem] = useState({});
+  const [buyAmount, setBuyAmount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  const [priceTotal, setPriceTotal] = useState(0);
   const [sumTotal, setSumTotal] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -32,10 +35,28 @@ const Router = () => {
 
   function handleBuyClick(item) {
     setShowPopup(true);
+    const cartData = {
+      id: item.rank,
+      name: item.name,
+      price: item.price,
+      amount: null,
+    };
+    setCurrentItem(cartData);
+  }
+
+  function handleBuyChange(e) {
+    setPriceTotal(e.target.value * currentItem.price);
+    setBuyAmount(e.target.value);
   }
 
   function handleBuySubmit() {
+    let currentItemCopy = { ...currentItem };
+    currentItemCopy.amount = parseInt(buyAmount);
+    currentItemCopy.price = priceTotal;
+    setCartItems([...cartItems, currentItemCopy]);
+    setSumTotal(getSumTotal(cartItems));
     setShowPopup(false);
+    setPriceTotal(0);
   }
 
   const router = createBrowserRouter([
@@ -49,7 +70,9 @@ const Router = () => {
         <Exchange
           cartItems={cartItems}
           clickHandler={handleBuyClick}
+          changeHandler={handleBuyChange}
           submitHandler={handleBuySubmit}
+          priceTotal={priceTotal}
           showPopup={showPopup}
         />
       ),
