@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Exchange from './Exchange';
 import Cart from './Cart';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { incrementAmount, getSumTotal } from './utils';
 
 const Router = () => {
@@ -13,25 +13,9 @@ const Router = () => {
   const [sumTotal, setSumTotal] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
 
-  // function handleBuyClick(item) {
-  //   // If cartItems array includes clicked item...
-  //   if (cartItems.some((cartItem) => cartItem.name === item.name)) {
-  //     // Increment item.amount at clicked index, and update cartItems state
-  //     const updatedArray = incrementAmount(cartItems, item);
-  //     setCartItems(updatedArray);
-  //   } else {
-  //     // Otherwise create new item, and update cartItems state
-  //     const cartData = {
-  //       id: item.rank,
-  //       name: item.name,
-  //       price: item.price,
-  //       amount: 1,
-  //     };
-  //     setCartItems([...cartItems, cartData]);
-  //   }
-  //   // Always update sumTotal state
-  //   setSumTotal(getSumTotal(cartItems));
-  // }
+  useEffect(() => {
+    setSumTotal(getSumTotal(cartItems));
+  }, [cartItems]);
 
   function handleBuyClick(item) {
     setShowPopup(true);
@@ -51,12 +35,20 @@ const Router = () => {
 
   function handleBuySubmit() {
     let currentItemCopy = { ...currentItem };
-    currentItemCopy.amount = parseInt(buyAmount);
-    currentItemCopy.price = priceTotal;
-    setCartItems([...cartItems, currentItemCopy]);
-    setSumTotal(getSumTotal(cartItems));
+
+    if (cartItems.some((cartItem) => cartItem.name === currentItem.name)) {
+      const updatedArray = incrementAmount(cartItems, currentItem, buyAmount);
+      setCartItems(updatedArray);
+      // Find better solution for this!
+    } else {
+      currentItemCopy.amount = parseFloat(buyAmount);
+      currentItemCopy.price = priceTotal;
+      if (currentItemCopy.price > 0)
+        setCartItems([...cartItems, currentItemCopy]);
+    }
     setShowPopup(false);
     setPriceTotal(0);
+    setBuyAmount(0);
   }
 
   const router = createBrowserRouter([
@@ -87,3 +79,23 @@ const Router = () => {
 };
 
 export default Router;
+
+// function handleBuyClick(item) {
+//   // If cartItems array includes clicked item...
+//   if (cartItems.some((cartItem) => cartItem.name === item.name)) {
+//     // Increment item.amount at clicked index, and update cartItems state
+//     const updatedArray = incrementAmount(cartItems, item);
+//     setCartItems(updatedArray);
+//   } else {
+//     // Otherwise create new item, and update cartItems state
+//     const cartData = {
+//       id: item.rank,
+//       name: item.name,
+//       price: item.price,
+//       amount: 1,
+//     };
+//     setCartItems([...cartItems, cartData]);
+//   }
+//   // Always update sumTotal state
+//   setSumTotal(getSumTotal(cartItems));
+// }
