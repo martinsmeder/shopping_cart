@@ -3,7 +3,7 @@ import App from './App';
 import Exchange from './Exchange';
 import Cart from './Cart';
 import { useEffect, useState } from 'react';
-import { incrementAmount, getSumTotal } from './utils';
+import { updateItem, getSumTotal } from './utils';
 
 const Router = () => {
   const [currentItem, setCurrentItem] = useState({});
@@ -18,14 +18,32 @@ const Router = () => {
   }, [cartItems]);
 
   function handleBuyClick(item) {
-    setShowPopup(true);
-    const cartData = {
-      id: item.rank,
-      name: item.name,
-      price: item.price,
-      amount: null,
-    };
-    setCurrentItem(cartData);
+    const existingItem = cartItems.find(
+      (cartItem) => cartItem.name === item.name
+    );
+
+    if (existingItem) {
+      setShowPopup(true);
+      // If the item is already in the cart, set the state with its values
+      setCurrentItem({
+        id: existingItem.id,
+        name: existingItem.name,
+        price: existingItem.price,
+        amount: existingItem.amount,
+      });
+      setBuyAmount(existingItem.amount); // Set buyAmount with the existing amount
+      setPriceTotal(existingItem.price * existingItem.amount); // Set priceTotal accordingly
+    } else {
+      // If it's not in the cart, proceed as usual
+      setShowPopup(true);
+      const cartData = {
+        id: item.rank,
+        name: item.name,
+        price: item.price,
+        amount: null,
+      };
+      setCurrentItem(cartData);
+    }
   }
 
   function handleBuyChange(e) {
@@ -36,11 +54,18 @@ const Router = () => {
   function handleBuySubmit() {
     let currentItemCopy = { ...currentItem };
 
+    // If item with same name as clicked item exists in cartItems array...
     if (cartItems.some((cartItem) => cartItem.name === currentItem.name)) {
-      const updatedArray = incrementAmount(cartItems, currentItem, buyAmount);
+      // ... modify existing item at index position and update cartItems state
+      const updatedArray = updateItem(
+        cartItems,
+        currentItem,
+        buyAmount,
+        priceTotal
+      );
       setCartItems(updatedArray);
-      // Find better solution for this!
     } else {
+      // ... otherwise add new item to cartItems
       currentItemCopy.amount = parseFloat(buyAmount);
       currentItemCopy.price = priceTotal;
       if (currentItemCopy.price > 0)
@@ -66,6 +91,7 @@ const Router = () => {
           submitHandler={handleBuySubmit}
           priceTotal={priceTotal}
           showPopup={showPopup}
+          value={buyAmount}
         />
       ),
     },
@@ -79,23 +105,3 @@ const Router = () => {
 };
 
 export default Router;
-
-// function handleBuyClick(item) {
-//   // If cartItems array includes clicked item...
-//   if (cartItems.some((cartItem) => cartItem.name === item.name)) {
-//     // Increment item.amount at clicked index, and update cartItems state
-//     const updatedArray = incrementAmount(cartItems, item);
-//     setCartItems(updatedArray);
-//   } else {
-//     // Otherwise create new item, and update cartItems state
-//     const cartData = {
-//       id: item.rank,
-//       name: item.name,
-//       price: item.price,
-//       amount: 1,
-//     };
-//     setCartItems([...cartItems, cartData]);
-//   }
-//   // Always update sumTotal state
-//   setSumTotal(getSumTotal(cartItems));
-// }

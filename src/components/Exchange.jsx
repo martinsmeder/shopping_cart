@@ -14,6 +14,7 @@ export default function Exchange({
   submitHandler,
   priceTotal,
   showPopup,
+  value,
 }) {
   const [coinData, setCoinData] = useState(testArray);
   // const [coinData, setCoinData] = useState(null);
@@ -35,17 +36,9 @@ export default function Exchange({
     <>
       <Header />
       <main id='exchangeContainer'>
-        <h1>REMOVE ME</h1>
-        <ul>
-          {cartItems.map((item) => (
-            <li key={item.id}>
-              {item.amount} x {item.name}: {item.price}$
-            </li>
-          ))}
-        </ul>
-
         <Popup
           showPopup={showPopup}
+          value={value}
           changeHandler={changeHandler}
           submitHandler={submitHandler}
           priceTotal={priceTotal}

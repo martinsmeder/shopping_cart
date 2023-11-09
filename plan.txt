@@ -27,11 +27,9 @@ Todo (MVP):
 ---
 ---
 ---
-input field change affect priceTotal with converted number
-submit adds correct coin, amount, and price to cartItems state 
-
-get num < 1 to work 
-Render cart
+---
+---
+---
 * Create test for adding stuff to cart only 
 * Add missing crucial functionality (e.g., deleting from cart)
 * Finish MVP 
