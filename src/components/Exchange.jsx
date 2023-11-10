@@ -43,7 +43,6 @@ export default function Exchange({
           submitHandler={submitHandler}
           priceTotal={priceTotal}
         />
-
         <Table data={coinData} clickHandler={clickHandler} />
       </main>
       <Footer />

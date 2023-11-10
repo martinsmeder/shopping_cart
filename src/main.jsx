@@ -6,6 +6,7 @@ import './styles/header.css';
 import './styles/footer.css';
 import './styles/home.css';
 import './styles/exchange.css';
+import './styles/popup.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
