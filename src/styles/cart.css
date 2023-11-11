@@ -1,0 +1,59 @@
+#cartContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#headingContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #FFF;
+    padding: 5px;
+    box-shadow: 0 0 0.3rem #000;
+}
+
+#cartList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart.text {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cartContainer button {
+    width: 100%;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background: #FFF;
+    color: #000;
+    transition: all .1s ease-out;
+}
+
+#cartContainer button:hover {
+    color: #FFF;
+    background: #000;
+}
+
+#cartContainer button:active {
+    transform: scale(1.1);
+}
+
+.checkedOut {
+    text-align: center;
+}
+
+

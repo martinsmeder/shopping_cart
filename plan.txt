@@ -32,7 +32,7 @@ Todo (MVP):
 ---
 ---
 ---
-style popup 
+---
 style cart 
 Add missing crucial functionality (e.g., deleting from cart + other missed stuff)
 update tests if necessary

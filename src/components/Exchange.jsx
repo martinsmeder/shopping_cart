@@ -14,6 +14,7 @@ export default function Exchange({
   submitHandler,
   priceTotal,
   showPopup,
+  showOverlay,
   value,
 }) {
   const [coinData, setCoinData] = useState(testArray);
@@ -34,6 +35,7 @@ export default function Exchange({
 
   return (
     <>
+      {showOverlay && <div className='overlay' />}
       <Header />
       <main id='exchangeContainer'>
         <Popup

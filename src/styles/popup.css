@@ -7,6 +7,9 @@
     border: 2px solid #000;
     border-radius: 10px;
     box-shadow: 0 0 .5rem #000;
+    background: #FFF;
+    position: absolute;
+    z-index: 10000;
 }
 
 .overlay {
@@ -31,7 +34,6 @@
     width: 100%;
     border: 2px solid #000;
     border-radius: 5px;
-    /* box-shadow: 0 0 .3rem #000; */
     font: .9rem / 1rem sans-serif;
     padding: 0.3rem 0.5rem;
 }

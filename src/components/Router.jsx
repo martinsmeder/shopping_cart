@@ -12,18 +12,22 @@ const Router = () => {
   const [priceTotal, setPriceTotal] = useState(0);
   const [sumTotal, setSumTotal] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
 
   useEffect(() => {
     setSumTotal(getSumTotal(cartItems));
   }, [cartItems]);
 
   function handleBuyClick(item) {
+    setIsCheckedOut(false);
     const existingItem = cartItems.find(
       (cartItem) => cartItem.name === item.name
     );
 
     if (existingItem) {
       setShowPopup(true);
+      setShowOverlay(true);
       // If the item is already in the cart, set the state with its values
       setCurrentItem({
         id: existingItem.id,
@@ -36,6 +40,7 @@ const Router = () => {
     } else {
       // If it's not in the cart, proceed as usual
       setShowPopup(true);
+      setShowOverlay(true);
       const cartData = {
         id: item.rank,
         name: item.name,
@@ -72,8 +77,14 @@ const Router = () => {
         setCartItems([...cartItems, currentItemCopy]);
     }
     setShowPopup(false);
+    setShowOverlay(false);
     setPriceTotal(0);
     setBuyAmount(0);
+  }
+
+  function handleCheckoutClick() {
+    setCartItems([]);
+    setIsCheckedOut(true);
   }
 
   const router = createBrowserRouter([
@@ -91,13 +102,21 @@ const Router = () => {
           submitHandler={handleBuySubmit}
           priceTotal={priceTotal}
           showPopup={showPopup}
+          showOverlay={showOverlay}
           value={buyAmount}
         />
       ),
     },
     {
       path: 'cart',
-      element: <Cart cartItems={cartItems} sumTotal={sumTotal} />,
+      element: (
+        <Cart
+          cartItems={cartItems}
+          sumTotal={sumTotal}
+          handleCheckout={handleCheckoutClick}
+          isCheckedOut={isCheckedOut}
+        />
+      ),
     },
   ]);
 
