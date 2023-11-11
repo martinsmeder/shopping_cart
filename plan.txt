@@ -33,8 +33,12 @@ Todo (MVP):
 ---
 ---
 ---
-style cart 
-Add missing crucial functionality (e.g., deleting from cart + other missed stuff)
+---
+---
+logic to automatically filter out any items with amount: 0
+some gif or image for when the cart is empty 
+style header 
+style footer
 update tests if necessary
 add back API data (go with full list)
 Finish MVP 

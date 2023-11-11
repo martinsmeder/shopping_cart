@@ -36,7 +36,7 @@ export default function Exchange({
   return (
     <>
       {showOverlay && <div className='overlay' />}
-      <Header />
+      <Header cartItems={cartItems} />
       <main id='exchangeContainer'>
         <Popup
           showPopup={showPopup}

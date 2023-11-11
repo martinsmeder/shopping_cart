@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
+import Home from './Home';
 import Exchange from './Exchange';
 import Cart from './Cart';
 import { useEffect, useState } from 'react';
@@ -82,6 +82,12 @@ const Router = () => {
     setBuyAmount(0);
   }
 
+  function handleDeleteClick(item) {
+    setCartItems(
+      cartItems.filter((itemToDelete) => itemToDelete.name !== item.name)
+    );
+  }
+
   function handleCheckoutClick() {
     setCartItems([]);
     setIsCheckedOut(true);
@@ -90,7 +96,7 @@ const Router = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <App />,
+      element: <Home cartItems={cartItems} />,
     },
     {
       path: 'exchange',
@@ -113,6 +119,7 @@ const Router = () => {
         <Cart
           cartItems={cartItems}
           sumTotal={sumTotal}
+          handleDelete={handleDeleteClick}
           handleCheckout={handleCheckoutClick}
           isCheckedOut={isCheckedOut}
         />

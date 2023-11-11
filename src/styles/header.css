@@ -19,3 +19,30 @@ nav {
     display: flex;
     gap: 10px;
 }
+
+.cartIcon {
+    position: relative;
+    display: inline-block;
+}
+
+
+.cartIcon svg {
+    width: 30px; 
+    height: 30px; 
+    color: #000;
+}
+  
+.cartBadge {
+    position: absolute;
+    top: 25%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF; 
+    color: #000; 
+    border: 1px solid #000;
+    border-radius: 50%;
+    padding: 0.0rem 0.3rem; 
+    font-size: 1rem; 
+    font-weight: bold;
+}
+  

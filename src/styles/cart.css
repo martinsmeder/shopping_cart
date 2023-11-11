@@ -1,5 +1,5 @@
 #cartContainer {
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +7,7 @@
 }
 
 #headingContainer {
-    width: 100%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,23 +18,30 @@
 }
 
 #cartList {
-    width: 100%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.cart.text {
+.cart.item {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+
+.cart.total {
+    border-top: 1px solid #000;
+    padding-top: 10px;
+    width: 40%;
     display: flex;
     justify-content: space-between;
 }
 
 #cartContainer button {
-    width: 100%;
-    padding: 5px;
+    padding: 3px;
     font-weight: bold;
-    font-size: 1.2rem;
     cursor: pointer;
     border: 2px solid #000;
     border-radius: 5px;
@@ -52,8 +59,29 @@
     transform: scale(1.1);
 }
 
+#checkoutBtn {
+    width: 40%;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.priceAndDelete {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .checkedOut {
     text-align: center;
+}
+
+.deleteIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.deleteIcon:hover {
+cursor: pointer;
 }
 
 

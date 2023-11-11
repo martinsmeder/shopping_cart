@@ -4,12 +4,13 @@ import Header from './Header';
 export default function Cart({
   cartItems,
   sumTotal,
+  handleDelete,
   handleCheckout,
   isCheckedOut,
 }) {
   return (
     <>
-      <Header />
+      <Header cartItems={cartItems} />
       <main>
         <div id='cartContainer'>
           {isCheckedOut ? (
@@ -27,19 +28,29 @@ export default function Cart({
               </div>
               <ul id='cartList'>
                 {cartItems.map((item) => (
-                  <div key={item.id} className='cart text'>
+                  <div key={item.id} className='cart item'>
                     <p>
                       {item.name.charAt(0).toUpperCase() + item.name.slice(1)} x{' '}
                       {item.amount}
                     </p>
-                    <p>{item.price.toFixed(2)}$</p>
+                    <div className='priceAndDelete'>
+                      <p>{item.price.toFixed(2)}$</p>
+                      <img
+                        className='deleteIcon'
+                        onClick={() => handleDelete(item)}
+                        src='delete.png'
+                        alt='Delete'
+                      />
+                    </div>
                   </div>
                 ))}
               </ul>
-              <h2 className='cart text'>
+              <h2 className='cart total'>
                 <p>Total</p> <p>{sumTotal.toFixed(2)}$</p>{' '}
               </h2>
-              <button onClick={handleCheckout}>Checkout</button>
+              <button id='checkoutBtn' onClick={handleCheckout}>
+                Checkout
+              </button>
             </>
           )}
         </div>
