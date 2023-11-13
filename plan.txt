@@ -35,9 +35,10 @@ Todo (MVP):
 ---
 ---
 ---
-logic to automatically filter out any items with amount: 0
-some gif or image for when the cart is empty 
+---
+---
 style header 
+fonts
 style footer
 update tests if necessary
 add back API data (go with full list)

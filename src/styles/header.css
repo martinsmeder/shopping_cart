@@ -1,9 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
 header {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-bottom: 2px solid #000;
+    box-shadow: 0 0 .9rem #000;
+}
+
+header h1 {
+    font-family: 'Zen Dots', sans-serif;
+    font-size: 2.5rem;
+    text-decoration: underline;
+    padding-top: 5px;
+}
+
+header a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+header a:nth-child(1) {
+    padding-top: 10px;
 }
 
 nav {
@@ -11,13 +31,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;  
-    padding: 10px;
-    
-}
-
-.nav.left {
-    display: flex;
-    gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
 .cartIcon {
@@ -33,6 +49,7 @@ nav {
 }
   
 .cartBadge {
+    font-family: monospace;
     position: absolute;
     top: 25%;
     left: 75%;

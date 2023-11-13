@@ -12,6 +12,10 @@ main {
     align-items: center;
 }
 
+.home.top, .home.bottom {
+  height: 300px
+}
+
 .home.top img {
     transform: scale(.7);
 }

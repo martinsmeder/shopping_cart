@@ -65,6 +65,18 @@
     font-size: 1.2rem;
 }
 
+#cartContainer .image {
+    width: 400px;
+    border: 2px solid #000;
+    border-radius: 100px;
+    box-shadow: 0 0 .5rem #000;
+}
+
+#cartContainer .text {
+    text-align: center;
+    width: 90%;
+}
+
 .priceAndDelete {
     display: flex;
     align-items: center;
@@ -81,7 +93,7 @@
 }
 
 .deleteIcon:hover {
-cursor: pointer;
+    cursor: pointer;
 }
 
 

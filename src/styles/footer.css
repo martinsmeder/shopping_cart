@@ -5,4 +5,16 @@ footer {
     justify-content: center;  
     padding: 10px;
     border-top: 2px solid #000;
+    box-shadow: 0 0 .9rem #000;
+}
+
+footer a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
