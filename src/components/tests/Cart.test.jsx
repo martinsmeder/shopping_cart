@@ -4,8 +4,8 @@ import Cart from '../Cart';
 
 it('renders cart with correct items and total', () => {
   const cartItems = [
-    { id: 1, name: 'Item 1', amount: 2, price: 10 },
-    { id: 2, name: 'Item 2', amount: 1, price: 5 },
+    { id: 1, name: 'First Item ', amount: 2, price: 10 },
+    { id: 2, name: 'Second Item ', amount: 1, price: 5 },
   ];
   const sumTotal = 25;
 
@@ -16,11 +16,16 @@ it('renders cart with correct items and total', () => {
   );
 
   // Check if the rendered content matches the expected values
-  const item1 = screen.getByText('2 x Item 1: 10$');
-  const item2 = screen.getByText('1 x Item 2: 5$');
-  const total = screen.getByText('Total: 25$');
+  const nameAndAmount1 = screen.getByText('First Item x 2');
+  const price1 = screen.getByText('10.00$');
+  expect(nameAndAmount1).toBeInTheDocument();
+  expect(price1).toBeInTheDocument();
 
-  expect(item1).toBeInTheDocument();
-  expect(item2).toBeInTheDocument();
+  const nameAndAmount2 = screen.getByText('Second Item x 1');
+  const price2 = screen.getByText('5.00$');
+  expect(nameAndAmount2).toBeInTheDocument();
+  expect(price2).toBeInTheDocument();
+
+  const total = screen.getByText('25.00$');
   expect(total).toBeInTheDocument();
 });

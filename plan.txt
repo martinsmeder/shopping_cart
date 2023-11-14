@@ -37,12 +37,14 @@ Todo (MVP):
 ---
 ---
 ---
-style header 
-fonts
-style footer
-update tests if necessary
-add back API data (go with full list)
-Finish MVP 
+---
+---
+---
+---
+---
+media queries
+favicon
+deploy
 
 Don't forget: 
 * https://www.coingecko.com/en/branding

@@ -63,3 +63,8 @@ nav {
     font-weight: bold;
 }
   
+@media (min-width: 1000px) {
+    nav {
+        justify-content: space-around;
+    }
+}
