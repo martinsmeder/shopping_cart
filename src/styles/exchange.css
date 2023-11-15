@@ -1,3 +1,9 @@
+#exchangeContainer {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+}
+
 table {
     width: 90%;
     border-spacing: 0 10px;
@@ -57,4 +63,40 @@ table button:hover {
 
 table button:active {
     transform: scale(1.1);
+}
+
+@media (max-width: 450px) {
+    th {
+        display: none;
+    }
+
+    tbody tr {
+        /* font-size: 1rem; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: 10px;
+        border: 1px solid #000;
+    }
+
+    .name {
+        grid-column: 1 / 3;
+        width: 100%;
+        justify-content: center;
+        /* box-shadow: 0 0 .3rem #000; */
+        border-bottom: 1px solid rgb(66, 66, 66);
+    }
+
+    table button {
+        border: 1px solid #000;
+    }
+
+    .rank {
+        display: none;
+    }
+
+    .price,.buy {
+        align-self: center;
+        justify-self: center;
+    }
 }

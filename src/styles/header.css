@@ -68,3 +68,13 @@ nav {
         justify-content: space-around;
     }
 }
+
+@media (max-width: 350px) {
+    header h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    nav {
+        /* justify-content: space-around; */
+    }
+}
