@@ -43,6 +43,7 @@ Todo (MVP):
 ---
 ---
 media queries
+add back local storage 
 favicon
 deploy
 

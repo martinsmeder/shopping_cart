@@ -16,17 +16,19 @@ export default function Cart({
           {isCheckedOut ? (
             // If checkout button is clicked...
             <>
-              <h2 className='text'>
-                It is with great pleasure that I extend my sincerest
-                congratulations unto you.
-              </h2>
-              <img className='image' src='thumbs-up.gif' alt='Thumbs Up' />
-              <h3 className='text'>
-                Be informed that your simulated transaction has been executed
-                with consummate success. Should you require further assistance
-                or consideration, we stand ready to serve you with the utmost
-                diligence.
-              </h3>
+              <div id='greetingContainer'>
+                <h2 className='text'>
+                  It is with great pleasure that I extend my sincerest
+                  congratulations unto you.
+                </h2>
+                <img className='image' src='thumbs-up.gif' alt='Thumbs Up' />
+                <h3 className='text'>
+                  Be informed that your simulated transaction has been executed
+                  with consummate success. Should you require further assistance
+                  or consideration, we stand ready to serve you with the utmost
+                  diligence.
+                </h3>
+              </div>
             </>
           ) : (
             <>
@@ -66,20 +68,22 @@ export default function Cart({
               ) : (
                 // If cart is empty
                 <>
-                  <h2 className='text'>
-                    Regrettably, it appears that your cart is bereft of
-                    acquisitions.
-                  </h2>
-                  <img
-                    className='image'
-                    src='empty-cart.png'
-                    alt='Empty Cart'
-                  />
-                  <h3 className='text'>
-                    May I kindly suggest perusing our esteemed selection of
-                    cryptocurrencies to rectify this situation? Your
-                    satisfaction is our utmost priority.
-                  </h3>
+                  <div id='greetingContainer'>
+                    <h2 className='text'>
+                      Regrettably, it appears that your cart is bereft of
+                      acquisitions.
+                    </h2>
+                    <img
+                      className='image'
+                      src='empty-cart.png'
+                      alt='Empty Cart'
+                    />
+                    <h3 className='text'>
+                      May I kindly suggest perusing our esteemed selection of
+                      cryptocurrencies to rectify this situation? Your
+                      satisfaction is our utmost priority.
+                    </h3>
+                  </div>
                 </>
               )}
             </>
