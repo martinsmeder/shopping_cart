@@ -1,8 +1,13 @@
-# React + Vite
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live demo: https://shopping-cart-blond-one.vercel.app/
 
-Currently, two official plugins are available:
+A very basic crypto exchange app built with React, and powered by CoinGecko API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Some things I've learned:
+
+- How to work with React Router
+- How to work with React Testing Library
+- How to immediately store API data in local storage to avoid rate limits
+- How to use FontAwesome for cart icon and badge
+- How to handle routing as a Single Page Application when deploying to Vercel
