@@ -22,10 +22,20 @@ export default function Exchange({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getCoins()
-      .then((data) => setCoinData(data))
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
+    const storedData = localStorage.getItem('coinData');
+
+    if (storedData) {
+      setCoinData(JSON.parse(storedData));
+      setLoading(false);
+    } else {
+      getCoins()
+        .then((data) => {
+          setCoinData(data);
+          localStorage.setItem('coinData', JSON.stringify(data));
+        })
+        .catch((error) => setError(error))
+        .finally(() => setLoading(false));
+    }
   }, []);
 
   if (error) return <p>A network error occured: {error}</p>;

@@ -1,5 +1,6 @@
 #cartContainer {
     width: 100vw;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,7 +107,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     #greetingContainer {
         width: 100%;
     }
@@ -118,5 +119,20 @@
     #cartContainer .image {
         width: 200px;
         border-radius: 50px;
+    }
+    
+    #headingContainer,
+    #cartContainer button,
+    #cartList,
+    .cart.total{
+        width: 80%;
+    }
+}
+
+@media (max-width: 250px) {
+    .cart.item {
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
     }
 }
