@@ -27,10 +27,9 @@ export default function Home({ cartItems }) {
             <h3>Immerse Yourself in the Crypto Universe</h3>
             <p>
               At The Ledger, we've meticulously curated a range of simulated
-              cryptocurrencies, each mirroring the behavior of real-world
-              digital assets. Our intuitive platform empowers you to simulate
-              buying and selling these digital currencies as if you were in the
-              actual market.
+              cryptocurrencies, each mirroring the price of real-world digital
+              assets. Our intuitive platform empowers you to simulate buying
+              these digital currencies as if you had enough money to do so.
             </p>
           </div>
         </div>
