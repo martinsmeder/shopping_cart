@@ -2,12 +2,4 @@
 
 Live demo: https://shopping-cart-blond-one.vercel.app/
 
-A very basic crypto exchange app built with React, and powered by CoinGecko API.
-
-Some things I've learned:
-
-- How to work with React Router
-- How to work with React Testing Library
-- How to immediately store API data in local storage to avoid rate limits
-- How to use FontAwesome for cart icon and badge
-- How to handle routing as a Single Page Application when deploying to Vercel
+A basic crypto exchange app built with React (including React Router), and powered by CoinGecko API.
